@@ -30,14 +30,14 @@ const Navbar = () => {
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14">
           {/* Left: Logo and Company Name */}
-          <div className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
+          <Link to="/" onClick={() => setActiveLink('Home')} className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
             <div className="bg-primary p-2 rounded-lg transform transition-transform group-hover:scale-110">
               <Truck size={28} className="text-white" />
             </div>
             <span className="text-xl md:text-2xl font-black text-heading font-poppins tracking-tight">
               NORTH<span className="text-primary ml-1">ROADWAYS</span>
             </span>
-          </div>
+          </Link>
 
           {/* Center: NavLinks (Desktop) */}
           <div className="hidden md:flex items-center space-x-10 absolute left-1/2 -translate-x-1/2">
@@ -58,10 +58,10 @@ const Navbar = () => {
 
           {/* Right: Contact Button (Desktop) */}
           <div className="hidden md:flex items-center">
-            <button className="bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-md hover:shadow-primary/30 transition-all active:scale-95 cursor-pointer">
+            <Link to="/contact" onClick={() => setActiveLink('Contact')} className="bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-md hover:shadow-primary/30 transition-all active:scale-95 cursor-pointer">
               <Phone size={18} />
               CONTACT US
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -102,10 +102,17 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 px-3">
-                <button className="w-full bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95">
+                <Link 
+                  to="/contact" 
+                  onClick={() => {
+                    setActiveLink('Contact')
+                    setIsOpen(false)
+                  }}
+                  className="w-full bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95"
+                >
                   <Phone size={20} />
                   CONTACT US
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>
