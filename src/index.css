@@ -1,2 +1,30 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #FF7518;
+  --color-primary-hover: #E66810;
+  --color-heading: #000000;
+  --color-paragraph: #71797E;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-poppins);
+    color: var(--color-paragraph);
+    background-color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+  }
+
+  p {
+    color: var(--color-paragraph);
+    line-height: 1.6;
+  }
+}
 
