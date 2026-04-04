@@ -57,9 +57,9 @@ const ServicesHero = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="max-w-2xl"
+                        className="max-w-2xl mx-auto text-center md:text-left md:mx-0"
                     >
-                        <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-primary/5 border border-primary/10 rounded-full group">
+                        <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-primary/5 border border-primary/10 rounded-full group mx-auto md:mx-0">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -67,7 +67,7 @@ const ServicesHero = () => {
                             <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Our Fleet & Capabilities</span>
                         </motion.div>
 
-                        <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold text-heading mb-8 leading-[1.1] tracking-tight">
+                        <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl max-[426px]:text-5xl font-extrabold text-heading mb-8 leading-[1.1] tracking-tight">
                             Premier <span className="text-primary relative inline-block">
                                 Logistics
                                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary/20 fill-current" viewBox="0 0 200 20">
@@ -81,9 +81,9 @@ const ServicesHero = () => {
                             Discover our comprehensive range of specialized transportation services. From agile pickups to massive container hauls, we provide the muscle for your logistics success.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="flex flex-wrap gap-5">
-                            <Link to="/contact">
-                                <button className="px-10 py-4 bg-primary text-white font-black text-sm tracking-widest rounded-2xl hover:bg-primary-hover shadow-2xl shadow-primary/30 transition-all active:scale-95 flex items-center gap-3 cursor-pointer group uppercase">
+                        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-5">
+                            <Link to="/contact" className="w-full max-[426px]:w-full sm:w-auto">
+                                <button className="w-full max-[426px]:w-full px-10 py-4 bg-primary text-white font-black text-sm tracking-widest rounded-2xl hover:bg-primary-hover shadow-2xl shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-3 cursor-pointer group uppercase">
                                     Contact Us
                                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                                 </button>

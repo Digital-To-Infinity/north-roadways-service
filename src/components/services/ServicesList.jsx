@@ -154,7 +154,7 @@ const ServicesList = () => {
     };
 
     return (
-        <section className="py-16 bg-white relative">
+        <section className="py-16 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="flex flex-col gap-32">
                     {servicesDetailed.map((service, index) => (
