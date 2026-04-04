@@ -1,36 +1,24 @@
 import { motion } from 'framer-motion';
-import { Coins, Truck, Zap, Users, ShieldCheck, MapPin } from 'lucide-react';
+import { Truck, Globe, Building2 } from 'lucide-react';
 
 const reasons = [
   { 
-    title: "Cost Competitiveness", 
-    desc: "We provide market-leading pricing structures without ever compromising on the quality and security of transit.", 
-    icon: Coins 
+    title: "On Company Vehicle", 
+    desc: "We maintain our own dedicated fleet, ensuring maximum security, reliability, and precision for every shipment we handle.", 
+    icon: Truck,
+    highlight: "100+ Fleet"
   },
   { 
-    title: "Diversified Fleet", 
-    desc: "A wide range of modern, heavy-duty vehicles perfectly suited for every type of structural and industrial load.", 
-    icon: Truck 
+    title: "International Reach", 
+    desc: "Seamless goods transportation across major South Asian nations with dedicated cross-border logistics expertise.", 
+    icon: Globe,
+    countries: ["India", "Nepal", "Bhutan", "Bangladesh"]
   },
   { 
-    title: "Fast Response", 
-    desc: "Agile and highly responsive operations ensuring your urgent logistics requirements are always met immediately.", 
-    icon: Zap 
-  },
-  { 
-    title: "Motivated Workforce", 
-    desc: "A highly trained, dedicated team of personnel focused on executing seamless and safe logistics.", 
-    icon: Users 
-  },
-  { 
-    title: "Ethical Practices", 
-    desc: "100% transparency, honesty, and professional integrity in every single transaction and transit.", 
-    icon: ShieldCheck 
-  },
-  { 
-    title: "Pan India Reach", 
-    desc: "An extensive, tightly knit network connecting every major city and remote location across the nation.", 
-    icon: MapPin 
+    title: "All Metro City Office", 
+    desc: "A powerful presence in every major metro hub, offering local expertise and seamless logistics coordination nationwide.", 
+    icon: Building2,
+    highlight: "24/7 Support"
   }
 ];
 
@@ -137,6 +125,37 @@ const WhyChooseUs = () => {
                   <p className="text-paragraph font-medium leading-relaxed group-hover:text-slate-600 transition-colors duration-300">
                     {reason.desc}
                   </p>
+                  {reason.countries && (
+                    <motion.div 
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={{
+                        visible: { transition: { staggerChildren: 0.1 } }
+                      }}
+                      className="flex flex-wrap gap-2 pt-2"
+                    >
+                      {reason.countries.map((country, idx) => (
+                        <motion.span 
+                          key={idx} 
+                          variants={{
+                            hidden: { opacity: 0, x: -10 },
+                            visible: { opacity: 1, x: 0 }
+                          }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          className="px-3 py-1.5 text-[10px] font-black uppercase tracking-wider rounded-lg bg-primary/5 text-primary border border-primary/10 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-sm cursor-default"
+                        >
+                          {country}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  )}
+                  {reason.highlight && (
+                    <div className="pt-2">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-tighter">
+                        {reason.highlight}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Decorative Bottom Bar */}
