@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Truck, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -14,6 +14,8 @@ const Navbar = () => {
     { name: 'Services', href: '/services' },
   ]
 
+  const location = useLocation()
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
@@ -21,6 +23,19 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const currentPath = location.pathname
+    if (currentPath === '/') {
+      setActiveLink('Home')
+    } else if (currentPath === '/about') {
+      setActiveLink('About')
+    } else if (currentPath === '/services') {
+      setActiveLink('Services')
+    } else if (currentPath === '/contact') {
+      setActiveLink('Contact')
+    }
+  }, [location])
 
   return (
     <nav
