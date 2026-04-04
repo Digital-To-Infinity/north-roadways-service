@@ -1,4 +1,4 @@
-import { Truck, Mail, MapPin, Phone } from 'lucide-react'
+import { Globe, Mail, MapPin, Phone } from 'lucide-react'
 
 // Custom SVG Social Icons (Since Lucide v1.x removed brand icons)
 const FacebookIcon = ({ size }) => (
@@ -56,7 +56,7 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-2 group cursor-pointer">
               <div className="bg-white p-2 rounded-lg transform transition-all group-hover:scale-105 group-hover:rotate-6">
-                <Truck size={24} className="text-primary font-bold" />
+                <Globe size={24} className="text-primary font-bold" />
               </div>
               <span className="text-2xl font-black font-poppins tracking-tighter text-white">
                 NORTH<span className="text-white/80 ml-1">ROADWAYS</span>

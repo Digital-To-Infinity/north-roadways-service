@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Truck, Phone } from 'lucide-react'
+import { Menu, X, Globe, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = () => {
@@ -47,7 +47,7 @@ const Navbar = () => {
           {/* Left: Logo and Company Name */}
           <Link to="/" onClick={() => setActiveLink('Home')} className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
             <div className="bg-primary p-2 rounded-lg transform transition-transform group-hover:scale-110">
-              <Truck size={28} className="text-white" />
+              <Globe size={28} className="text-white" />
             </div>
             <span className="text-xl md:text-2xl font-black text-heading font-poppins tracking-tight">
               NORTH<span className="text-primary ml-1">ROADWAYS</span>
