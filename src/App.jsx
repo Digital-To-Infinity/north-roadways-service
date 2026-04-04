@@ -7,6 +7,7 @@ import About from './pages/About';
 import ScrollToTop from './components/common/ScrollToTop';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+import FloatingActionButtons from './components/common/FloatingActionButtons';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </main>
 
         <Footer />
+        <FloatingActionButtons />
       </div>
     </Router>
   )
