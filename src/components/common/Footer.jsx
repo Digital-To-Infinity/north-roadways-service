@@ -18,9 +18,27 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
-    { title: 'Company', items: ['About Us', 'Our History', 'Our Team', 'Contact'] },
-    { title: 'Services', items: ['Freight Transport', 'Warehousing', 'Inventory Management', 'Supply Chain'] },
-    { title: 'Legal', items: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'] }
+    { 
+      title: 'Company', 
+      items: [
+        { name: 'About', link: '/about' },
+        { name: 'Services', link: '/services' },
+        { name: 'Contact', link: '/contact' }
+      ] 
+    },
+    { 
+      title: 'Services', 
+      items: [
+        { name: 'Pickup', link: '/services#pickup' },
+        { name: 'LCV', link: '/services#lcv' },
+        { name: 'Full Truck Load', link: '/services#ftl' },
+        { name: 'ODC', link: '/services#odc' },
+        { name: 'Container 20ft', link: '/services#container-20ft' },
+        { name: 'Container 32ft XL', link: '/services#container-32ft-xl' },
+        { name: 'Container Multi XL', link: '/services#container-multi-xl' },
+        { name: 'Trailer', link: '/services#trailer' }
+      ] 
+    }
   ]
 
   const socialLinks = [
@@ -31,7 +49,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-primary text-white pt-20 pb-10 transition-all duration-500">
+    <footer className="bg-primary text-white py-12 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
@@ -62,18 +80,18 @@ const Footer = () => {
 
           {/* Quick Links */}
           {footerLinks.map((section) => (
-            <div key={section.title} className="space-y-6">
-              <h4 className="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:bottom--2 after:left-0 after:w-10 after:h-0.5 after:bg-white/50">
+            <div key={section.title} className="space-y-6 lg:pl-10">
+              <h4 className="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-white">
                 {section.title}
               </h4>
               <ul className="space-y-4">
                 {section.items.map((item) => (
-                  <li key={item}>
+                  <li key={item.name}>
                     <a
-                      href="#"
+                      href={item.link}
                       className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all font-medium opacity-90 hover:opacity-100"
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -83,27 +101,31 @@ const Footer = () => {
 
           {/* Contact Details */}
           <div className="space-y-6">
-              <h4 className="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:bottom--2 after:left-0 after:w-10 after:h-0.5 after:bg-white/50">
-                Contact Details
+              <h4 className="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-white">
+                Contact
               </h4>
               <ul className="space-y-5">
-                <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
-                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
+                <li className="flex items-start gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
+                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors mt-1">
                     <MapPin size={20} />
                   </div>
-                  <span className="font-medium">123 Logistics Way, Transport City, TC 54321</span>
+                  <span className="font-medium">Bima Complex, Office No.- D-3091, Kalamboli, Navi Mumbai</span>
                 </li>
                 <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
-                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
-                    <Phone size={20} />
-                  </div>
-                  <span className="font-medium">+1 (234) 567-890</span>
+                  <a href="tel:+919331594304" className="flex items-center gap-4 w-full">
+                    <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
+                      <Phone size={20} />
+                    </div>
+                    <span className="font-medium">+91 9331594304</span>
+                  </a>
                 </li>
                 <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
-                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
-                    <Mail size={20} />
-                  </div>
-                  <span className="font-medium">contact@northroadways.com</span>
+                  <a href="mailto:northroadwaysservice@gmail.com" className="flex items-center gap-4 w-full">
+                    <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
+                      <Mail size={20} />
+                    </div>
+                    <span className="font-medium">northroadwaysservice@gmail.com</span>
+                  </a>
                 </li>
               </ul>
           </div>
@@ -111,10 +133,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/20 text-center md:flex md:justify-between md:items-center">
-          <p className="text-white/70 text-sm font-medium">
+          <p className="text-white/70 text-base font-medium">
             © {currentYear} North Roadways Service. All rights reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex justify-center gap-6 text-sm font-semibold text-white/70">
+          <div className="mt-4 md:mt-0 flex justify-center gap-6 text-base font-semibold text-white/70">
             <a href="#" className="hover:text-white transition-colors underline-offset-4 hover:underline">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors underline-offset-4 hover:underline">Terms of Service</a>
           </div>

@@ -7,6 +7,7 @@ import warehouseImg from '../../assets/images/about_warehouse.png';
 
 const servicesDetailed = [
   { 
+    id: "pickup",
     name: "Pickup", 
     desc: "Our agile pickup fleet is designed for swift city logistics, ensuring your small-scale cargo reaches its destination through the narrowest streets and busiest traffic with ease.", 
     icon: Zap,
@@ -20,6 +21,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "lcv",
     name: "LCV", 
     desc: "Light Commercial Vehicles bridge the gap between small deliveries and heavy hauls. Ideal for distributing consumer goods to retail outlets and regional warehouses.", 
     icon: Truck,
@@ -33,6 +35,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "ftl",
     name: "Full Truck Load", 
     desc: "Tailored for industrial giants, our FTL service guarantees a dedicated high-capacity vehicle for your shipment, minimizing handling and maximizing speed for interstate transit.", 
     icon: Box,
@@ -46,6 +49,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "odc",
     name: "ODC", 
     desc: "Over-Dimensional Cargo handling requires precision. We manage the transport of oversized machinery and equipment with specialized infrastructure and expert supervision.", 
     icon: Maximize,
@@ -59,6 +63,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "container-20ft",
     name: "Container 20ft", 
     desc: "The global standard for logistics. Our 20ft containers offer weatherproof, high-security transit for electronics, textiles, and sensitive manufactured goods.", 
     icon: Package,
@@ -72,6 +77,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "container-32ft-xl",
     name: "Container 32ft XL", 
     desc: "When 20ft isn't enough, our XL containers provide massive cubic capacity for lighter but high-volume goods like FMCG and automotive components.", 
     icon: ShieldCheck,
@@ -85,6 +91,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "container-multi-xl",
     name: "Container Multi XL", 
     desc: "Our Multi-axle XL containers are the heavyweights of the container fleet. Capable of carrying massive loads while maintaining stability and safety over long distances.", 
     icon: Package,
@@ -98,6 +105,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "trailer",
     name: "Trailer", 
     desc: "Versatile and heavy-duty, our trailer fleet includes flatbeds and open-top trailers for everything from construction material to industrial pipes.", 
     icon: Gauge,
@@ -111,6 +119,7 @@ const servicesDetailed = [
     ]
   },
   { 
+    id: "all-goods",
     name: "All Goods Vehicles", 
     desc: "A universal fleet solution for any cargo requirement. We provide flexible vehicle options for mixed goods, ensuring no shipment is too small or too unique.", 
     icon: Truck,
@@ -151,6 +160,7 @@ const ServicesList = () => {
                     {servicesDetailed.map((service, index) => (
                         <motion.div 
                             key={index}
+                            id={service.id}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
