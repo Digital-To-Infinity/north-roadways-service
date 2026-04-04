@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge, ChevronRight, X, Send, CheckCircle2 } from 'lucide-react';
 
 const vehicleData = [
   { 
@@ -59,6 +60,23 @@ const vehicleData = [
 ];
 
 const VehicleTypes = () => {
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleQuoteSubmit = (e) => {
+      e.preventDefault();
+      setIsLoading(true);
+      setTimeout(() => {
+          setIsLoading(false);
+          setIsSubmitted(true);
+          setTimeout(() => {
+              setSelectedVehicle(null);
+              setIsSubmitted(false);
+          }, 3000);
+      }, 1500);
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
@@ -119,6 +137,7 @@ const VehicleTypes = () => {
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
+              onClick={() => setSelectedVehicle(vehicle.name)}
               className="group relative bg-[#ffffff] border border-slate-100 p-10 rounded-[3rem] overflow-hidden hover:border-primary/50 hover:shadow-[0_40px_80px_rgba(255,117,24,0.12)] transition-all duration-500 cursor-pointer"
             >
               {/* Dynamic Glow Overlay */}
@@ -161,6 +180,103 @@ const VehicleTypes = () => {
           ))}
         </motion.div>
       </div>
+
+      {/* Quote Modal */}
+      <AnimatePresence>
+          {selectedVehicle && (
+              <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                  {/* Backdrop */}
+                  <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={() => setSelectedVehicle(null)}
+                      className="absolute inset-0 bg-heading/60 backdrop-blur-sm"
+                  />
+
+                  {/* Modal Content */}
+                  <motion.div 
+                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                      className="relative bg-white w-full max-w-xl rounded-[3rem] shadow-2xl overflow-hidden"
+                  >
+                      <button 
+                          onClick={() => setSelectedVehicle(null)}
+                          className="absolute top-8 right-8 text-paragraph hover:text-primary transition-colors p-2 bg-slate-50 rounded-xl pointer-events-auto z-10"
+                      >
+                          <X size={24} />
+                      </button>
+
+                      <div className="p-8 md:p-12">
+                          {!isSubmitted ? (
+                              <div className="space-y-8">
+                                  <div className="space-y-2">
+                                      <h3 className="text-3xl font-black text-heading">
+                                          Request Quote
+                                      </h3>
+                                      <p className="text-paragraph font-medium">
+                                          Selected Vehicle: <span className="text-primary font-bold">{selectedVehicle}</span>
+                                      </p>
+                                  </div>
+
+                                  <form onSubmit={handleQuoteSubmit} className="space-y-5">
+                                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                          <div className="space-y-2">
+                                              <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Full Name</label>
+                                              <input required type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
+                                          </div>
+                                          <div className="space-y-2">
+                                              <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Mobile Number</label>
+                                              <input required type="tel" placeholder="+91 99999 99999" className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
+                                          </div>
+                                      </div>
+                                      <div className="space-y-2">
+                                          <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Email Address</label>
+                                          <input required type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
+                                      </div>
+                                      <div className="space-y-2">
+                                          <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Message</label>
+                                          <textarea required rows="4" placeholder="How can we help you?" className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all resize-none"></textarea>
+                                      </div>
+
+                                      <button 
+                                          disabled={isLoading}
+                                          className="w-full py-5 bg-primary text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-primary-hover transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/20 active:scale-95 disabled:opacity-70"
+                                      >
+                                          {isLoading ? (
+                                              <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                                          ) : (
+                                              <>
+                                                  Send Request <Send size={18} />
+                                              </>
+                                          )}
+                                      </button>
+                                  </form>
+                              </div>
+                          ) : (
+                              <motion.div 
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  className="py-12 flex flex-col items-center text-center space-y-6"
+                              >
+                                  <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl animate-bounce">
+                                      <CheckCircle2 size={48} />
+                                  </div>
+                                  <div className="space-y-2">
+                                      <h3 className="text-3xl font-black text-heading uppercase">Success!</h3>
+                                      <p className="text-paragraph font-bold text-lg">
+                                          Your request for <span className="text-primary">{selectedVehicle}</span> has been sent. <br />
+                                          We'll contact you shortly.
+                                      </p>
+                                  </div>
+                              </motion.div>
+                          )}
+                      </div>
+                  </motion.div>
+              </div>
+          )}
+      </AnimatePresence>
     </section>
   );
 };
