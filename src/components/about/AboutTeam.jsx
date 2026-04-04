@@ -35,14 +35,14 @@ const teamMembers = [
 
 const AboutTeam = () => {
     return (
-        <section className="relative py-16 bg-[#fafafa] overflow-hidden">
+        <section className="relative py-16 max-[426px]:py-8 bg-[#fafafa] overflow-hidden">
             {/* Background elements - matching site theme */}
             <div className="absolute inset-0 pointer-events-none opacity-40">
                 <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
                 <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]"></div>
             </div>
 
-            <div className="container mx-auto px-4 lg:px-6 relative z-10">
+            <div className="mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -58,7 +58,7 @@ const AboutTeam = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-6xl font-black text-heading tracking-tight"
+                        className="text-5xl md:text-6xl max-[426px]:text-4xl font-black text-heading tracking-tight"
                     >
                         The Faces Behind <br />
                         <span className="text-primary italic">Our Success</span>
@@ -69,7 +69,7 @@ const AboutTeam = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-paragraph text-xl font-medium max-w-2xl mx-auto"
+                        className="text-paragraph text-xl max-[426px]:text-lg font-medium max-w-2xl mx-auto"
                     >
                         Meet the dedicated leaders driving North Roadways Service towards new horizons of logistics excellence.
                     </motion.p>
@@ -83,7 +83,7 @@ const AboutTeam = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="group relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 overflow-hidden"
+                            className="group relative bg-white p-10 max-[426px]:p-6 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 overflow-hidden"
                         >
                             {/* Decorative Background Icon */}
                             <member.icon className="absolute -right-6 -bottom-6 w-32 h-32 text-slate-50 group-hover:text-primary/5 transition-colors duration-700 pointer-events-none" />

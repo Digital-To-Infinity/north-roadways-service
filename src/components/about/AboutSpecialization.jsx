@@ -42,14 +42,14 @@ const specialties = [
 
 const AboutSpecialization = () => {
     return (
-        <section className="relative py-16 bg-white overflow-hidden">
+        <section className="relative py-16 max-[426px]:py-8 bg-white overflow-hidden">
             {/* Consistent Background Blobs */}
             <div className="absolute inset-0 pointer-events-none opacity-40">
                 <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
                 <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]"></div>
             </div>
 
-            <div className="container mx-auto px-4 lg:px-6 relative z-10">
+            <div className="mx-auto px-4 lg:px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -65,7 +65,7 @@ const AboutSpecialization = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-6xl font-black text-heading leading-tight tracking-tight"
+                        className="text-5xl md:text-6xl max-[426px]:text-3xl font-black text-heading leading-tight tracking-tight"
                     >
                         Industrial <span className="text-primary italic">Specialization</span>
                     </motion.h2>
@@ -75,7 +75,7 @@ const AboutSpecialization = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-paragraph text-xl font-medium"
+                        className="text-paragraph text-xl max-[426px]:text-lg font-medium"
                     >
                         We don't just provide trucks; we provide engineered logistics solutions tailored for modern commerce.
                     </motion.p>
