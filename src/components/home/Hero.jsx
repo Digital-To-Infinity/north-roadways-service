@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Truck, Globe, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroBg from '../../assets/images/truck_hero_bg.png';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 pt-30 pb-20">
+    <section className="relative min-h-[90vh] max-[426px]:min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-950 pt-10 max-[426px]:pt-0 pb-10">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -35,7 +36,7 @@ const Hero = () => {
             <span className="text-primary text-sm font-semibold tracking-wide uppercase">Reliable Logistics Partner</span>
           </div>
           
-          <h1 className="text-6xl font-black text-white leading-[1.1] tracking-tight">
+          <h1 className="text-6xl max-[426px]:text-5xl font-black text-white leading-[1.1] tracking-tight">
             Driving <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Success</span> <br/>
             Across The Nation.
           </h1>
@@ -45,13 +46,19 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-hover hover:from-primary-hover hover:to-primary text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 shadow-xl hover:shadow-primary/40">
+            <Link 
+              to="/services"
+              className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-hover hover:from-primary-hover hover:to-primary text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 shadow-xl hover:shadow-primary/40"
+            >
               Our Services
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="flex items-center justify-center gap-2 border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-bold text-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            </Link>
+            <Link 
+              to="/contact"
+              className="flex items-center justify-center gap-2 border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-bold text-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
         </motion.div>
 

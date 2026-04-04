@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -34,12 +35,15 @@ const CTA = () => {
           </div>
 
           <div className="relative z-10 flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            <button className="bg-white text-primary hover:bg-slate-100 px-10 py-5 rounded-full font-black text-lg uppercase tracking-widest transition-all shadow-xl hover:shadow-white/20 hover:-translate-y-1 flex items-center gap-3 group">
+            <Link 
+              to="/contact"
+              className="bg-white text-primary hover:bg-slate-100 px-10 max-[426px]:px-8 py-5 rounded-full font-black text-lg uppercase tracking-widest transition-all shadow-xl hover:shadow-white/20 hover:-translate-y-1 flex items-center gap-3 group"
+            >
               Get a Free Quote 
               <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
             <a 
-               href="tel:+919999999999" 
+               href="tel:9331594304" 
                className="flex items-center gap-3 text-white border-2 border-white/30 hover:border-white px-8 py-[18px] rounded-full font-black text-lg uppercase tracking-widest transition-all"
             >
               <Phone size={20} /> Call Now

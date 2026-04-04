@@ -78,7 +78,7 @@ const WhyChooseUs = () => {
             <span className="text-primary text-xs font-black tracking-widest uppercase">The North Roadways Advantage</span>
           </div>
 
-          <h2 className="text-7xl font-black text-heading uppercase tracking-tight">
+          <h2 className="text-7xl max-[426px]:text-6xl font-black text-heading uppercase tracking-tight">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Choose Us?</span>
           </h2>
           

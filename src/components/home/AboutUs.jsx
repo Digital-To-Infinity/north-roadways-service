@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Award } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import warehouseImg from '../../assets/images/about_warehouse.png';
 import trucksImg from '../../assets/images/about_trucks.png';
 
@@ -94,14 +95,14 @@ const AboutUs = () => {
               </span>
               Who We Are
             </h4>
-            <h2 className="text-5xl lg:text-5xl xl:text-6xl font-black text-heading leading-[1.15] tracking-tight">
+            <h2 className="text-5xl lg:text-5xl xl:text-6xl max-[426px]:text-4xl font-black text-heading leading-[1.15] tracking-tight">
               Your Trusted Partner in <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#ff9844]">Logistics Solutions.</span>
             </h2>
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-6 text-paragraph text-lg leading-relaxed border-l-4 border-primary/20 pl-6 lg:pl-8">
-            <p className="font-semibold text-slate-700 text-xl">
+            <p className="font-semibold text-slate-700 text-xl max-[426px]:text-lg">
               Based in India, North Roadways Service is a certified organization and a leading provider of comprehensive transportation logistics.
             </p>
             <p>
@@ -110,12 +111,15 @@ const AboutUs = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <button className="relative overflow-hidden flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary-hover text-white px-10 py-4 rounded-full font-black text-lg uppercase tracking-wide transition-all duration-300 hover:bg-primary-hover hover:-translate-y-1 group cursor-pointer">
+            <Link 
+              to="/about"
+              className="relative overflow-hidden flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary-hover text-white px-10 py-4 rounded-full font-black text-lg uppercase tracking-wide transition-all duration-300 hover:bg-primary-hover hover:-translate-y-1 group cursor-pointer inline-flex"
+            >
               <span className="relative z-10 flex items-center gap-2">
                 Discover More
                 <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

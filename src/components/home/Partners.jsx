@@ -1,16 +1,43 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Ship, Hexagon, Component, Globe2, ShieldCheck, Target, Zap, PackageSearch } from 'lucide-react';
+import logo1 from '../../assets/logo/Acion _ Orion Scaffolding Pvt Ltd.png';
+import logo2 from '../../assets/logo/Atlantis Cabins.png';
+import logo3 from '../../assets/logo/BSC Interiors Pvt Ltd.png';
+import logo4 from '../../assets/logo/Big Imports & Gifts.png';
+import logo5 from '../../assets/logo/Blackstone Engineering.png';
+import logo6 from '../../assets/logo/CTRLM Print Management India Pvt Ltd.png';
+import logo7 from '../../assets/logo/Express Global Logistics Pvt Ltd.png';
+import logo8 from '../../assets/logo/Laxmi Engineering Works.png';
+import logo9 from '../../assets/logo/NCC Limited.png';
+import logo10 from '../../assets/logo/OM Spiro Fabricators.png';
+import logo11 from '../../assets/logo/Rohan Construction Co.png';
+import logo12 from '../../assets/logo/Shiv Shakti Process Equipment Pvt Ltd.png';
+import logo13 from '../../assets/logo/Steelcase.png';
+import logo14 from '../../assets/logo/Sudarshan Pharma Industries Ltd.png';
+import logo15 from '../../assets/logo/Sun International.png';
+import logo16 from '../../assets/logo/Sushil Enterprises Mehsana.png';
+import logo17 from '../../assets/logo/Tuyan Industries.png';
+import logo18 from '../../assets/logo/Unicorn Petroleum Industries Pvt Ltd.png';
 
 const partnersData = [
-  { name: 'APL LOGISTICS', brand: 'APL', Icon: Ship, color: '#3b82f6' },
-  { name: 'AM/NS INDIA', brand: 'AM/NS', Icon: Target, color: '#f97316' },
-  { name: 'JINDAL STAR', brand: 'JINDAL', Icon: Hexagon, color: '#16a34a' },
-  { name: 'TATA MOTORS', brand: 'TATA', Icon: Globe2, color: '#1d4ed8' },
-  { name: 'MAHINDRA', brand: 'MAHINDRA', Icon: ShieldCheck, color: '#dc2626' },
-  { name: 'BLUE DART', brand: 'BLUE DART', Icon: Zap, color: '#eab308' },
-  { name: 'FEDEX CORP', brand: 'FedEx', Icon: PackageSearch, color: '#9333ea' },
-  { name: 'DELHIVERY', brand: 'DELHIVERY', Icon: Component, color: '#ef4444' },
+  { name: 'Acion Orion Scaffolding Pvt Ltd', logo: logo1, color: '#f97316' },
+  { name: 'Atlantis Cabins', logo: logo2, color: '#0ea5e9' },
+  { name: 'BSC Interiors Pvt Ltd', logo: logo3, color: '#16a34a' },
+  { name: 'Big Imports & Gifts', logo: logo4, color: '#ec4899' },
+  { name: 'Blackstone Engineering', logo: logo5, color: '#6366f1' },
+  { name: 'CTRLM Print Management India Pvt Ltd', logo: logo6, color: '#f43f5e' },
+  { name: 'Express Global Logistics Pvt Ltd', logo: logo7, color: '#f59e0b' },
+  { name: 'Laxmi Engineering Works', logo: logo8, color: '#10b981' },
+  { name: 'NCC Limited', logo: logo9, color: '#3b82f6' },
+  { name: 'OM Spiro Fabricators', logo: logo10, color: '#8b5cf6' },
+  { name: 'Rohan Construction Co', logo: logo11, color: '#ef4444' },
+  { name: 'Shiv Shakti Process Equipment Pvt Ltd', logo: logo12, color: '#06b6d4' },
+  { name: 'Steelcase', logo: logo13, color: '#f97316' },
+  { name: 'Sudarshan Pharma Industries Ltd', logo: logo14, color: '#84cc16' },
+  { name: 'Sun International', logo: logo15, color: '#eab308' },
+  { name: 'Sushil Enterprises Mehsana', logo: logo16, color: '#64748b' },
+  { name: 'Tuyan Industries', logo: logo17, color: '#d946ef' },
+  { name: 'Unicorn Petroleum Industries Pvt Ltd', logo: logo18, color: '#2dd4bf' },
 ];
 
 const Partners = () => {
@@ -89,35 +116,27 @@ const Partners = () => {
                   }}
                 />
 
-                {/* Screenshot reference: bottom right circle shape */}
                 <div className={`absolute -bottom-10 -right-10 w-32 h-32 rounded-full transition-all duration-700 ease-out -z-10
                   ${isHovered ? 'bg-[#FF7518]/10 scale-150' : 'bg-slate-50 scale-100'}
                 `}></div>
                 
                 {/* Logo Area */}
-                <div className="h-24 w-full flex items-center justify-center relative z-10">
+                <div className="h-28 w-full flex items-center justify-center relative z-10">
                   <motion.div 
-                    animate={{ y: isHovered ? -8 : 0, scale: isHovered ? 1.1 : 1 }}
+                    animate={{ y: isHovered ? -8 : 0, scale: isHovered ? 1.08 : 1 }}
                     transition={{ duration: 0.4, ease: "backOut" }}
-                    className="flex flex-col items-center gap-3"
+                    className="flex items-center justify-center w-full h-full p-2"
                   >
-                    <partner.Icon 
-                      size={42} 
-                      color={partner.color} 
-                      strokeWidth={2} 
-                      className="transition-all duration-300 drop-shadow-sm" 
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-h-full max-w-full object-contain"
                     />
-                    <h3 
-                      className="text-2xl lg:text-3xl font-black tracking-tighter transition-all duration-300"
-                      style={{ color: partner.color }}
-                    >
-                      {partner.brand}
-                    </h3>
                   </motion.div>
                 </div>
                 
                 {/* Separator & Name */}
-                <div className="mt-8 relative z-10 w-full flex flex-col items-center">
+                <div className="mt-8 max-[426px]:mt-0 relative z-10 w-full flex flex-col items-center">
                   <motion.div 
                     initial={{ width: "30px" }}
                     animate={{ 
@@ -127,7 +146,7 @@ const Partners = () => {
                     transition={{ duration: 0.4 }}
                     className="h-[3px] mb-5 rounded-full"
                   />
-                  <h4 className={`font-bold text-xs lg:text-sm tracking-[0.15em] uppercase transition-all duration-300 ${isHovered ? 'text-heading' : 'text-slate-500'}`}>
+                  <h4 className={`font-bold text-xs lg:text-sm tracking-wider transition-all duration-300 text-center ${isHovered ? 'text-heading' : 'text-slate-900'}`}>
                     {partner.name}
                   </h4>
                 </div>
