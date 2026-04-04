@@ -8,9 +8,9 @@ const About = () => {
     return (
         <div className="w-full relative flex flex-col min-h-screen">
             <AboutHero />
+            <AboutTeam />
             <AboutInfo />
             <AboutSpecialization />
-            <AboutTeam />
             <CTA />
         </div>
     );
