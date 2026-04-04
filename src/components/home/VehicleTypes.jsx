@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge, ChevronRight, X, Send, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge } from 'lucide-react';
 
 const vehicleData = [
   {
@@ -61,21 +61,6 @@ const vehicleData = [
 
 const VehicleTypes = () => {
   const [selectedVehicle, setSelectedVehicle] = useState(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleQuoteSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setSelectedVehicle(null);
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -155,7 +140,7 @@ const VehicleTypes = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-extrafold text-heading group-hover:text-primary transition-colors duration-300 tracking-tight leading-none">
+                  <h3 className="text-2xl font-black text-heading group-hover:text-primary transition-colors duration-300 tracking-tight leading-none">
                     {vehicle.name}
                   </h3>
                   <p className="text-paragraph text-base font-medium leading-relaxed">

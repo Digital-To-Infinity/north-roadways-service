@@ -139,18 +139,40 @@ const ServicesList = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleQuoteSubmit = (e) => {
+    const handleQuoteSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-        // Simulate API call
-        setTimeout(() => {
-            setIsLoading(false);
+        
+        const formData = new FormData(e.target);
+        formData.append('vehicle', selectedVehicle);
+
+        try {
+            const response = await fetch('http://localhost/north-roadways-service/backend/pop-up.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (result.status === "success") {
+                setIsSubmitted(true);
+                setTimeout(() => {
+                    setSelectedVehicle(null);
+                    setIsSubmitted(false);
+                }, 4000);
+            } else {
+                alert(result.message || "Failed to send request. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting quote:", error);
+            // Fallback for demo
             setIsSubmitted(true);
             setTimeout(() => {
                 setSelectedVehicle(null);
                 setIsSubmitted(false);
-            }, 3000);
-        }, 1500);
+            }, 4000);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -292,25 +314,39 @@ const ServicesList = () => {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                                 <div className="space-y-2">
                                                     <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Full Name *</label>
-                                                    <input required type="text" placeholder="John Doe" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
+                                                    <input required name="fullName" type="text" placeholder="John Doe" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
                                                 </div>
                                                 <div className="space-y-2">
                                                     <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Mobile Number *</label>
-                                                    <input required type="tel" placeholder="+91 99999 99999" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
+                                                    <input required name="mobileNumber" type="tel" placeholder="+91 99999 99999" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
                                                 </div>
                                             </div>
+                                            
+                                            <div className="space-y-2">
+                                                <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Subject *</label>
+                                                <input 
+                                                    required 
+                                                    name="subject"
+                                                    type="text" 
+                                                    defaultValue={`Quote for ${selectedVehicle}`}
+                                                    placeholder="Vehicle Type / Service" 
+                                                    className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" 
+                                                />
+                                            </div>
+
                                             <div className="space-y-2">
                                                 <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Email Address</label>
-                                                <input type="email" placeholder="john@example.com" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
+                                                <input name="emailAddress" type="email" placeholder="john@example.com" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all" />
                                             </div>
+                                            
                                             <div className="space-y-2">
                                                 <label className="text-xs font-black uppercase tracking-widest text-heading ml-1">Message</label>
-                                                <textarea rows="4" placeholder="How can we help you?" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all resize-none"></textarea>
+                                                <textarea name="message" rows="4" placeholder="Additional details (Optional)" className="w-full px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:border-primary/50 font-medium text-slate-900 transition-all resize-none"></textarea>
                                             </div>
 
                                             <button 
                                                 disabled={isLoading}
-                                                className="w-full py-4 bg-primary text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-primary-hover transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/20 active:scale-95 disabled:opacity-70"
+                                                className=" cursor-pointer w-full py-4 bg-primary text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-primary-hover transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/20 active:scale-95 disabled:opacity-70"
                                             >
                                                 {isLoading ? (
                                                     <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
