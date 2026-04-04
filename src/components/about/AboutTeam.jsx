@@ -101,7 +101,7 @@ const AboutTeam = () => {
                                     </div>
                                 </div>
 
-                                <h3 className="text-3xl font-black text-heading mb-2 group-hover:text-primary transition-colors duration-300 tracking-tight">
+                                <h3 className="text-3xl max-[426px]:text-2xl font-black text-heading mb-2 group-hover:text-primary transition-colors duration-300 tracking-tight">
                                     {member.name}
                                 </h3>
                                 <p className="text-lg font-bold text-paragraph uppercase tracking-widest text-sm mb-10">

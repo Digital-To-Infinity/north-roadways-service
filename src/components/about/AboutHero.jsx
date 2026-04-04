@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Truck } from 'lucide-react';
 import truckImg from '../../assets/images/about-hero-truck.png';
@@ -84,13 +85,17 @@ const AboutHero = () => {
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-5 mb-16 max-[426px]:mb-0">
-                            <button className="max-[426px]:w-full px-10 py-5 bg-primary text-white font-black text-sm tracking-widest rounded-2xl hover:bg-primary-hover shadow-2xl shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-3 cursor-pointer group uppercase">
-                                Explore Services
-                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                            </button>
-                            <button className="max-[426px]:w-full px-10 py-5 bg-white text-heading font-bold text-sm tracking-widest rounded-2xl border-2 border-slate-100 hover:border-primary/20 hover:bg-slate-50 transition-all active:scale-95 flex items-center justify-center cursor-pointer uppercase">
-                                Contact Us
-                            </button>
+                            <Link to="/services" className="w-full sm:w-auto max-[426px]:w-full">
+                                <button className="w-full max-[426px]:w-full px-10 py-5 bg-primary text-white font-black text-sm tracking-widest rounded-2xl hover:bg-primary-hover shadow-2xl shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-3 cursor-pointer group uppercase">
+                                    Explore Services
+                                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            </Link>
+                            <Link to="/contact" className="w-full sm:w-auto max-[426px]:w-full">
+                                <button className="w-full max-[426px]:w-full px-10 py-5 bg-white text-heading font-bold text-sm tracking-widest rounded-2xl border-2 border-slate-100 hover:border-primary/20 hover:bg-slate-50 transition-all active:scale-95 flex items-center justify-center cursor-pointer uppercase">
+                                    Contact Us
+                                </button>
+                            </Link>
                         </motion.div>
                     </motion.div>
 
