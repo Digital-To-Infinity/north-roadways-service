@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @theme {
-  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-sans: var(--font-poppins);
+
+  --breakpoint-md: 770px;
   
   --color-primary: #FF7518;
   --color-primary-hover: #E66810;
@@ -11,13 +14,16 @@
 }
 
 @layer base {
-  :root {
+  html, body {
     font-family: var(--font-poppins);
     color: var(--color-paragraph);
     background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins);
     color: var(--color-heading);
     font-weight: 700;
   }
