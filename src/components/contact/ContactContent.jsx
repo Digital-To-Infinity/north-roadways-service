@@ -34,7 +34,7 @@ const ContactContent = () => {
     }, []);
 
     return (
-        <section className="py-16 bg-white relative overflow-hidden">
+        <section className="py-16 max-[426px]:py-8 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 lg:px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                     
@@ -49,10 +49,10 @@ const ContactContent = () => {
                         }}
                         className="lg:col-span-12 xl:col-span-5 space-y-12"
                     >
-                        <div className="space-y-6 text-center xl:text-left">
-                            <h2 className="text-4xl font-extrabold text-heading leading-[1.2]">
-                                We're Here To <br />
-                                <span className="text-primary italic font-light">Support You</span> At Every Step
+                        <div className="space-y-6 text-left">
+                            <h2 className="text-4xl max-[426px]:text-[32px] font-extrabold text-heading leading-[1.2]">
+                                We're Here To {" "}
+                                <span className="text-primary italic font-light">Support <br /> You</span> At Every Step
                             </h2>
                         </div>
 
@@ -87,11 +87,11 @@ const ContactContent = () => {
                                         </div>
                                     </div>
                                     <div className="space-y-1">
-                                        <h4 className="text-lg font-bold text-heading group-hover:text-primary transition-colors duration-300 text-center xl:text-left">{item.title}</h4>
+                                        <h4 className="text-lg font-bold text-heading group-hover:text-primary transition-colors duration-300 text-left">{item.title}</h4>
                                         {item.details.map((detail, dIdx) => (
-                                            <p key={dIdx} className="text-paragraph font-medium text-center xl:text-left">{detail}</p>
+                                            <p key={dIdx} className="text-paragraph font-medium text-left">{detail}</p>
                                         ))}
-                                        <p className="text-xs text-paragraph/60 uppercase tracking-widest pt-1 text-center xl:text-left">{item.sub}</p>
+                                        <p className="text-xs text-paragraph/60 uppercase tracking-widest pt-1 text-left">{item.sub}</p>
                                     </div>
                                 </a>
                             ))}
@@ -108,7 +108,7 @@ const ContactContent = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.5 }}
-                                    className="bg-[#fafafa] p-8 md:p-8 rounded-[40px] border border-slate-100 shadow-2xl shadow-slate-100/50 h-full"
+                                    className="bg-[#fafafa] p-8 md:p-8 max-[426px]:p-4 rounded-[40px] border border-slate-100 shadow-2xl shadow-slate-100/50 h-full"
                                 >
                                     <form className="space-y-8" onSubmit={handleSubmit}>
                                         <div className="space-y-6">
