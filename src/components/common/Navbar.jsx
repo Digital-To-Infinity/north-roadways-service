@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X, Truck, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -41,9 +42,9 @@ const Navbar = () => {
           {/* Center: NavLinks (Desktop) */}
           <div className="hidden md:flex items-center space-x-10 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 onClick={() => setActiveLink(link.name)}
                 className={`text-heading hover:text-primary font-semibold text-lg tracking-wide transition-all relative 
                   after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all
@@ -51,7 +52,7 @@ const Navbar = () => {
                 `}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -86,9 +87,9 @@ const Navbar = () => {
           >
             <div className="px-4 pt-4 pb-8 space-y-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className={`block px-3 py-3 text-lg font-semibold rounded-lg transition-all 
                     ${activeLink === link.name ? 'text-primary bg-orange-50' : 'text-paragraph hover:text-primary hover:bg-orange-50'}
                   `}
@@ -98,7 +99,7 @@ const Navbar = () => {
                   }}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 px-3">
                 <button className="w-full bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95">
