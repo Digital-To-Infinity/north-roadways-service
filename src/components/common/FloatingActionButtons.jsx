@@ -12,7 +12,7 @@ const FloatingActionButtons = () => {
             ),
             color: '#25D366',
             label: 'WhatsApp',
-            link: 'https://wa.me/919331594304?text=Hello,%20I%20have%20an%20inquiry%20regarding%20North%20Roadways%20Service.',
+            link: 'https://wa.me//+918583994218?text=Hello,%20I%20have%20an%20inquiry%20regarding%20North%20Roadways%20Service.',
             hover: 'bg-[#25D366]'
         },
         {

@@ -47,10 +47,10 @@ const Navbar = () => {
           {/* Left: Logo and Company Name */}
           <Link to="/" onClick={() => setActiveLink('Home')} className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
             <div className="bg-primary p-2 rounded-lg transform transition-transform group-hover:scale-110">
-              <Globe size={28} className="text-white" />
+              <Globe size={22} className="text-white" />
             </div>
-            <span className="text-xl md:text-2xl font-black text-heading font-poppins tracking-tight">
-              NORTH<span className="text-primary ml-1">ROADWAYS</span>
+            <span className="text-lg md:text-xl font-black text-heading font-poppins tracking-tight">
+              NORTH<span className="text-primary ml-1">ROADWAYS</span> SERVICES
             </span>
           </Link>
 

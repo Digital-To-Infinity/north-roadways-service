@@ -6,7 +6,7 @@ const teamMembers = [
         name: "Diwakar Kumar Tiwari",
         role: "Director",
         mob: "9331594304",
-        whatsapp: "8583994218",
+        whatsapp: "+918583994218",
         icon: User,
         accent: "bg-blue-500/10 text-blue-600"
     },

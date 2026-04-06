@@ -20,7 +20,7 @@ import logo17 from '../../assets/logo/Tuyan Industries.png';
 import logo18 from '../../assets/logo/Unicorn Petroleum Industries Pvt Ltd.png';
 
 const partnersData = [
-  { name: 'Acion Orion Scaffolding Pvt Ltd', logo: logo1, color: '#f97316' },
+  { name: 'Arion Scaffolding Pvt Ltd', logo: logo1, color: '#f97316' },
   { name: 'Atlantis Cabins', logo: logo2, color: '#0ea5e9' },
   { name: 'BSC Interiors Pvt Ltd', logo: logo3, color: '#16a34a' },
   { name: 'Big Imports & Gifts', logo: logo4, color: '#ec4899' },
@@ -32,10 +32,10 @@ const partnersData = [
   { name: 'OM Spiro Fabricators', logo: logo10, color: '#8b5cf6' },
   { name: 'Rohan Construction Co', logo: logo11, color: '#ef4444' },
   { name: 'Shiv Shakti Process Equipment Pvt Ltd', logo: logo12, color: '#06b6d4' },
-  { name: 'Steelcase', logo: logo13, color: '#f97316' },
+  { name: 'Steel Case', logo: logo13, color: '#f97316' },
   { name: 'Sudarshan Pharma Industries Ltd', logo: logo14, color: '#84cc16' },
   { name: 'Sun International', logo: logo15, color: '#eab308' },
-  { name: 'Sushil Enterprises Mehsana', logo: logo16, color: '#64748b' },
+  { name: 'Sushil Enterprises Pvt Ltd', logo: logo16, color: '#64748b' },
   { name: 'Tuyan Industries', logo: logo17, color: '#d946ef' },
   { name: 'Unicorn Petroleum Industries Pvt Ltd', logo: logo18, color: '#2dd4bf' },
 ];
