@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Globe, Phone } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Logo from '../../assets/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,15 +40,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${scrolled ? 'shadow-lg py-3' : 'py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${scrolled ? 'shadow-lg py-3' : 'py-3'
         }`}
     >
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14">
           {/* Left: Logo and Company Name */}
-          <Link to="/" onClick={() => setActiveLink('Home')} className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
-            <div className="bg-primary p-2 rounded-lg transform transition-transform group-hover:scale-110">
-              <Globe size={22} className="text-white" />
+          <Link to="/" onClick={() => setActiveLink('Home')} className="flex-shrink-0 flex items-center gap-1 group cursor-pointer">
+            <div className="group-hover:scale-110">
+              <img src={Logo} alt="Logo" className='w-8 max-[426px]:w-6' />
             </div>
             <span className="text-lg md:text-xl font-black text-heading font-poppins tracking-tight">
               NORTH<span className="text-primary ml-1">ROADWAYS</span> SERVICES

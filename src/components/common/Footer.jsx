@@ -1,4 +1,5 @@
 import { Globe, Mail, MapPin, Phone } from 'lucide-react'
+import Logo from '../../assets/logo.png'
 
 // Custom SVG Social Icons (Since Lucide v1.x removed brand icons)
 const FacebookIcon = ({ size }) => (
@@ -51,12 +52,12 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white py-12 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-16">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="bg-white p-2 rounded-lg transform transition-all group-hover:scale-105 group-hover:rotate-6">
-                <Globe size={32} className="text-primary font-bold" />
+              <div className="group-hover:scale-105 group-hover:rotate-6">
+                <img src={Logo} alt="Logo" className='w-16 max-[426px]:w-7' />
               </div>
               <span className="text-2xl font-black font-poppins tracking-tighter text-white">
                 NORTH<span className="text-white/80 ml-1">ROADWAYS</span> SERVICES
@@ -134,7 +135,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/20 text-center md:flex md:justify-between md:items-center">
           <p className="text-white/70 text-base font-medium">
-            © {currentYear} North Roadways Service. All rights reserved.
+            © {currentYear} North Roadways Service. All rights reserved. | Crafted By <a href="https://digitaltoinfinity.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline">Dignity To Infinity</a>
           </p>
           <div className="mt-4 md:mt-0 flex justify-center gap-6 text-base font-semibold text-white/70">
             <a href="#" className="hover:text-white transition-colors underline-offset-4 hover:underline">Privacy Policy</a>
