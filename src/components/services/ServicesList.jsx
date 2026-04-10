@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge, ChevronRight, MapPin, Clock, CheckCircle2, ArrowRight, Settings, X, Send } from 'lucide-react';
-import truckImg from '../../assets/images/truck_container_fleet.png';
-import trailerImg from '../../assets/images/trailer_industrial_fleet.png';
-import warehouseImg from '../../assets/images/about_warehouse.png';
+import pickupImg from '../../assets/images/pickup.jpeg';
+import lcvImg from '../../assets/images/lcv.jpeg';
+import ftlImg from '../../assets/images/ftl.jpeg';
+import odcImg from '../../assets/images/odc.jpeg';
+import container20ftImg from '../../assets/images/container_20ft.jpeg';
+import container32ftxlImg from '../../assets/images/container_32ft_xl.jpeg';
+import containerMultiXLImg from '../../assets/images/container_multi_xl.jpeg';
+import trailerImg from '../../assets/images/trailer.jpeg';
+import allGoodsImg from '../../assets/images/all_goods.jpeg';
 
 const servicesDetailed = [
   { 
@@ -12,7 +18,7 @@ const servicesDetailed = [
     desc: "Our agile pickup fleet is designed for swift city logistics, ensuring your small-scale cargo reaches its destination through the narrowest streets and busiest traffic with ease.", 
     icon: Zap,
     tag: "Small & Fast",
-    image: truckImg,
+    image: pickupImg,
     specs: ["Max Weight: 1.5 Tons", "Fuel: CNG/Diesel", "Urban Friendly", "GPS Tracked"],
     working: [
         { title: "Booking", desc: "Instant booking through our platform or helpline." },
@@ -26,7 +32,7 @@ const servicesDetailed = [
     desc: "Light Commercial Vehicles bridge the gap between small deliveries and heavy hauls. Ideal for distributing consumer goods to retail outlets and regional warehouses.", 
     icon: Truck,
     tag: "Regional Expert",
-    image: truckImg,
+    image: lcvImg,
     specs: ["Max Weight: 3.5 - 7 Tons", "Door-to-door", "Regional Transit", "Cargo Secured"],
     working: [
         { title: "Consolidation", desc: "Efficient loading of multiple SKU types." },
@@ -40,7 +46,7 @@ const servicesDetailed = [
     desc: "Tailored for industrial giants, our FTL service guarantees a dedicated high-capacity vehicle for your shipment, minimizing handling and maximizing speed for interstate transit.", 
     icon: Box,
     tag: "High Priority",
-    image: trailerImg,
+    image: ftlImg,
     specs: ["Dedicated Engine", "Non-stop Transit", "High Capacity", "Zero-handling Risk"],
     working: [
         { title: "Seal Check", desc: "Strict sealing protocols for security." },
@@ -51,10 +57,10 @@ const servicesDetailed = [
   { 
     id: "odc",
     name: "ODC", 
-    desc: "Over-Dimensional Cargo handling requires precision. We manage the transport of oversized machinery and equipment with specialized infrastructure and expert supervision.", 
+    desc: "Over-Dimensional Consignment ( ODC Cargo ) handling requires precision. We manage the transport of oversized machinery and equipment with specialized infrastructure and expert supervision.", 
     icon: Maximize,
     tag: "Heavy Engineering",
-    image: warehouseImg,
+    image: odcImg,
     specs: ["Escort Vehicles", "Height/Width Survey", "Heavy Lift Gear", "Permit Management"],
     working: [
         { title: "Pre-Survey", desc: "Route survey for clearance and bridge loads." },
@@ -68,7 +74,7 @@ const servicesDetailed = [
     desc: "The global standard for logistics. Our 20ft containers offer weatherproof, high-security transit for electronics, textiles, and sensitive manufactured goods.", 
     icon: Package,
     tag: "Weatherproof",
-    image: truckImg,
+    image: container20ftImg,
     specs: ["Standard ISO Size", "Theft Resistant", "Weather Tight", "Stackable"],
     working: [
         { title: "Loading", desc: "Expert packing to prevent movement." },
@@ -78,11 +84,11 @@ const servicesDetailed = [
   },
   { 
     id: "container-32ft-xl",
-    name: "Container 32ft XL", 
+    name: "Container 32ft Single XL", 
     desc: "When 20ft isn't enough, our XL containers provide massive cubic capacity for lighter but high-volume goods like FMCG and automotive components.", 
     icon: ShieldCheck,
     tag: "High Volume",
-    image: trailerImg,
+    image: container32ftxlImg,
     specs: ["Extended Length", "Volume Optimized", "Double Axle", "High Speed"],
     working: [
         { title: "Volume Planning", desc: "Maximizing every cubic inch of space." },
@@ -96,7 +102,7 @@ const servicesDetailed = [
     desc: "Our Multi-axle XL containers are the heavyweights of the container fleet. Capable of carrying massive loads while maintaining stability and safety over long distances.", 
     icon: Package,
     tag: "Max Capacity",
-    image: truckImg,
+    image: containerMultiXLImg,
     specs: ["Multi-Axle Support", "Indestructible Build", "Global Standard", "Remote GPS"],
     working: [
         { title: "Heavy Load Prep", desc: "Verifying weight distribution carefully." },
@@ -107,7 +113,7 @@ const servicesDetailed = [
   { 
     id: "trailer",
     name: "Trailer", 
-    desc: "Versatile and heavy-duty, our trailer fleet includes flatbeds and open-top trailers for everything from construction material to industrial pipes.", 
+    desc: "Versatile and heavy-duty, our trailer fleet includes flatbeds, highbeds and lowbeds trailers for everything from construction material to industrial pipes.", 
     icon: Gauge,
     tag: "Industrial Strength",
     image: trailerImg,
@@ -124,7 +130,7 @@ const servicesDetailed = [
     desc: "A universal fleet solution for any cargo requirement. We provide flexible vehicle options for mixed goods, ensuring no shipment is too small or too unique.", 
     icon: Truck,
     tag: "Versatile Fleet",
-    image: warehouseImg,
+    image: allGoodsImg,
     specs: ["Customizable Config", "Flexible Pricing", "All-India Coverage", "Dedicated Support"],
     working: [
         { title: "Custom Quote", desc: "Pricing based on your specific mix." },
@@ -136,8 +142,19 @@ const servicesDetailed = [
 
 const ServicesList = () => {
     const [selectedVehicle, setSelectedVehicle] = useState(null);
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    useEffect(() => {
+        if (selectedVehicle) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedVehicle]);
 
     const handleQuoteSubmit = async (e) => {
         e.preventDefault();
@@ -203,8 +220,8 @@ const ServicesList = () => {
                                                 <service.icon size={24} />
                                             </div>
                                             <div>
-                                                <h4 className="text-xl font-black">{service.name}</h4>
-                                                <p className="text-xs uppercase tracking-widest font-bold opacity-70">{service.tag}</p>
+                                                <h4 className="text-xl text-primary font-black">{service.name}</h4>
+                                                <p className="text-xs uppercase tracking-widest font-bold text-white/90">{service.tag}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -212,7 +229,7 @@ const ServicesList = () => {
                                 {/* Floating Specs Card */}
                                 <motion.div 
                                     whileHover={{ y: -5 }}
-                                    className={`absolute -bottom-10 bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-50 z-20 min-w-[280px] ${index % 2 !== 0 ? '-left-10' : '-right-10'}`}
+                                    className={`absolute -bottom-10 bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-50 z-20 min-w-[280px] ${index % 2 !== 0 ? '-right-10' : '-right-10'}`}
                                 >
                                     <h5 className="text-heading font-black text-sm uppercase mb-4 flex items-center gap-2">
                                         <CheckCircle2 size={16} className="text-primary" /> Key Specifications
@@ -289,7 +306,7 @@ const ServicesList = () => {
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            className="relative bg-white w-full max-w-xl rounded-[3rem] shadow-2xl overflow-hidden"
+                            className="relative bg-white w-full max-w-xl rounded-[3rem] shadow-2xl overflow-y-auto max-h-[90vh] custom-scrollbar"
                         >
                             <button 
                                 onClick={() => setSelectedVehicle(null)}

@@ -1,4 +1,4 @@
-import { Globe, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import Logo from '../../assets/logo.png'
 
 // Custom SVG Social Icons (Since Lucide v1.x removed brand icons)
@@ -19,26 +19,27 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
-    { 
-      title: 'Company', 
+    {
+      title: 'Company',
       items: [
+        { name: 'Home', link: '/' },
         { name: 'About', link: '/about' },
         { name: 'Services', link: '/services' },
         { name: 'Contact', link: '/contact' }
-      ] 
+      ]
     },
-    { 
-      title: 'Services', 
+    {
+      title: 'Services',
       items: [
         { name: 'Pickup', link: '/services#pickup' },
         { name: 'LCV', link: '/services#lcv' },
         { name: 'Full Truck Load', link: '/services#ftl' },
         { name: 'ODC', link: '/services#odc' },
         { name: 'Container 20ft', link: '/services#container-20ft' },
-        { name: 'Container 32ft XL', link: '/services#container-32ft-xl' },
+        { name: 'Container 32ft Single XL', link: '/services#container-32ft-xl' },
         { name: 'Container Multi XL', link: '/services#container-multi-xl' },
         { name: 'Trailer', link: '/services#trailer' }
-      ] 
+      ]
     }
   ]
 
@@ -60,11 +61,11 @@ const Footer = () => {
                 <img src={Logo} alt="Logo" className='w-16 max-[426px]:w-7' />
               </div>
               <span className="text-2xl font-black font-poppins tracking-tighter text-white">
-                NORTH<span className="text-white/80 ml-1">ROADWAYS</span> SERVICES
+                NORTH<span className="text-white/80 ml-1">ROADWAYS</span> SERVICE
               </span>
             </div>
             <p className="text-white/80 leading-relaxed max-w-xs font-medium">
-              Reliable transportation and logistics solutions tailored to your business needs across the region since 1998.
+              Reliable transportation and logistics solutions tailored to your business needs across the region since 2022.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link, idx) => (
@@ -102,33 +103,33 @@ const Footer = () => {
 
           {/* Contact Details */}
           <div className="space-y-6">
-              <h4 className="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-white">
-                Contact
-              </h4>
-              <ul className="space-y-5">
-                <li className="flex items-start gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
-                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors mt-1">
-                    <MapPin size={20} />
+            <h4 className="text-lg font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-white">
+              Contact
+            </h4>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
+                <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors mt-1">
+                  <MapPin size={20} />
+                </div>
+                <span className="font-medium">Bima Complex, Office No.- D-3091, Kalamboli, Navi Mumbai</span>
+              </li>
+              <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
+                <a href="tel:+919331594304" className="flex items-center gap-4 w-full">
+                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
+                    <Phone size={20} />
                   </div>
-                  <span className="font-medium">Bima Complex, Office No.- D-3091, Kalamboli, Navi Mumbai</span>
-                </li>
-                <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
-                  <a href="tel:+919331594304" className="flex items-center gap-4 w-full">
-                    <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
-                      <Phone size={20} />
-                    </div>
-                    <span className="font-medium">+91 9331594304</span>
-                  </a>
-                </li>
-                <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
-                  <a href="mailto:northroadwaysservice@gmail.com" className="flex items-center gap-4 w-full">
-                    <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
-                      <Mail size={20} />
-                    </div>
-                    <span className="font-medium">northroadwaysservice@gmail.com</span>
-                  </a>
-                </li>
-              </ul>
+                  <span className="font-medium">+91 9331594304</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-4 text-white/90 group cursor-pointer hover:text-white transition-colors">
+                <a href="mailto:northroadwaysservice@gmail.com" className="flex items-center gap-4 w-full">
+                  <div className="bg-white/10 group-hover:bg-white/20 p-2 rounded-lg transition-colors">
+                    <Mail size={20} />
+                  </div>
+                  <span className="font-medium">northroadwaysservice@gmail.com</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

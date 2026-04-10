@@ -23,13 +23,13 @@ const vehicleData = [
   },
   {
     name: "ODC",
-    desc: "Over-Dimensional Cargo: Specialized handling for massive machinery.",
+    desc: "Over-Dimensional Consignment Over-Dimensional Container : Our over dimensional cargo specialized in handling for massive machinery.",
     icon: Maximize,
     tag: "Heavy"
   },
   {
     name: "Trailer",
-    desc: "Heavy-duty open and flatbed trailers for versatile logistical needs.",
+    desc: "Heavy-duty open for flatbeds, highbeds and lowbeds trailers for versatile logistical needs.",
     icon: Gauge,
     tag: "Industrial"
   },
@@ -40,7 +40,7 @@ const vehicleData = [
     tag: "Standard"
   },
   {
-    name: "Container Single XL 32ft",
+    name: "Container 32ft Single XL",
     desc: "Extended capacity container for higher volume specialized goods.",
     icon: ShieldCheck,
     tag: "Extended"
@@ -140,7 +140,7 @@ const VehicleTypes = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-black text-heading group-hover:text-primary transition-colors duration-300 tracking-tight leading-none">
+                  <h3 className="text-[23px] font-black text-heading group-hover:text-primary transition-colors duration-300 tracking-tight leading-none">
                     {vehicle.name}
                   </h3>
                   <p className="text-paragraph text-base font-medium leading-relaxed">

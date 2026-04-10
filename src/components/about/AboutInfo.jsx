@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Lightbulb, Users, CheckCircle2, ArrowRight, TrendingUp } from 'lucide-react';
+import { Target, Lightbulb, Users, CheckCircle2, TrendingUp } from 'lucide-react';
 
 const coreValues = [
   {
@@ -58,7 +58,7 @@ const AboutInfo = () => {
 
                             <h2 className="text-5xl md:text-6xl max-[426px]:text-4xl font-black text-heading leading-[1.1] tracking-tight">
                                 Delivering Reliability <br />
-                                <span className="text-primary italic">Since 1995.</span>
+                                <span className="text-primary italic">Since 2022.</span>
                             </h2>
 
                             <p className="text-paragraph text-xl max-[426px]:text-lg leading-relaxed font-medium max-w-xl mx-auto md:mx-0">
@@ -73,7 +73,7 @@ const AboutInfo = () => {
                                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                         <Users size={24} />
                                     </div>
-                                    <span className="text-4xl font-black text-heading">500+</span>
+                                    <span className="text-4xl font-black text-heading">100+</span>
                                 </div>
                                 <h4 className="text-lg font-bold text-heading group-hover:text-primary transition-colors">Trusted Clients</h4>
                                 <p className="text-paragraph text-sm font-medium mt-2">Leading businesses trusting us daily.</p>

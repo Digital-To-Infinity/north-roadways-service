@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Truck } from 'lucide-react';
-import truckImg from '../../assets/images/about-hero-truck.png';
+import { ArrowRight } from 'lucide-react';
+import truckImg from '../../assets/images/about-img.jpeg';
 
 const AboutHero = () => {
     const containerVariants = {
@@ -67,7 +67,7 @@ const AboutHero = () => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                             </span>
-                            <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Est. 1995</span>
+                            <span className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Est. 2022</span>
                         </motion.div>
 
                         <motion.h1 variants={itemVariants} className="text-6xl max-[426px]:text-4xl font-extrabold text-heading mb-8 max-[426px]:mb-4 leading-[1.1] tracking-tight">

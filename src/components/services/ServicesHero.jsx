@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Settings } from 'lucide-react';
-import servicesHeroImg from '../../assets/images/logistics_excellence_bg.png';
+import servicesHeroImg from '../../assets/images/services_hero_img.jpeg';
 
 const ServicesHero = () => {
     const containerVariants = {

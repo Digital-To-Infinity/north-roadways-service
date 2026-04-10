@@ -10,7 +10,7 @@ const specialties = [
     },
     {
         title: "ODC Cargo Handling",
-        description: "Expertise in managing Over Dimensional Cargo with specialized trailers and route surveys for complex industrial machinery.",
+        description: "Expertise in managing Over Dimensional Consignment with specialized trailers and route surveys for complex industrial machinery.",
         icon: Package,
         keywords: ["Surveys", "Permission", "Heavy"]
     },
@@ -22,7 +22,7 @@ const specialties = [
     },
     {
         title: "Multi-Modal Solutions",
-        description: "Integrated road and rail transport solutions to optimize costs and reduce lead times for long-range shipments.",
+        description: "Integrated road and transport solutions to optimize costs and reduce lead times for long-range shipments.",
         icon: Globe,
         keywords: ["Economical", "Diverse", "Rail"]
     },

@@ -18,7 +18,7 @@ const teamMembers = [
         accent: "bg-primary/10 text-primary"
     },
     {
-        name: "Ad. Himanshu Kumar Tiwari",
+        name: "Advocate Himanshu Kumar Tiwari",
         role: "Legal Advisor",
         mob: "7800245531, 8840954150",
         icon: Scale,

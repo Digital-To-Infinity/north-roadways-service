@@ -51,7 +51,7 @@ const Navbar = () => {
               <img src={Logo} alt="Logo" className='w-8 max-[426px]:w-6' />
             </div>
             <span className="text-lg md:text-xl font-black text-heading font-poppins tracking-tight">
-              NORTH<span className="text-primary ml-1">ROADWAYS</span> SERVICES
+              NORTH<span className="text-primary ml-1">ROADWAYS</span> SERVICE
             </span>
           </Link>
 

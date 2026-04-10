@@ -90,7 +90,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <p className="text-slate-400 text-xs font-semibold uppercase">Shipment NJ-889</p>
-                  <p className="text-white font-bold text-sm">En Route to Chicago</p>
+                  <p className="text-white font-bold text-sm">En Route to India</p>
                 </div>
               </div>
               

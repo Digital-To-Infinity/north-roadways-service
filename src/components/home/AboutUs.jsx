@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import warehouseImg from '../../assets/images/about_warehouse.png';
-import trucksImg from '../../assets/images/about_trucks.png';
+import trucksImg from '../../assets/images/about_trucks.jpeg';
 
 const AboutUs = () => {
   const containerVariants = {
