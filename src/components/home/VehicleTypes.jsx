@@ -23,7 +23,7 @@ const vehicleData = [
   },
   {
     name: "ODC",
-    desc: "Over-Dimensional Consignment Over-Dimensional Container : Our over dimensional cargo specialized in handling for massive machinery.",
+    desc: "Over-Dimension Consignment Over-Dimension Container : Our over dimension cargo specialized in handling for massive machinery.",
     icon: Maximize,
     tag: "Heavy"
   },
@@ -79,33 +79,8 @@ const VehicleTypes = () => {
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-slate-100 rounded-full blur-[80px] -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col items-center justify-center text-center mb-20 space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4 flex flex-col items-center"
-          >
-            <h4 className="text-primary font-black tracking-[0.25em] text-sm max-[426px]:text-xs uppercase flex items-center gap-4">
-              <span className="w-12 h-[2px] bg-primary"></span>
-              Extensive Fleet Range
-              <span className="w-12 h-[2px] bg-primary"></span>
-            </h4>
-            <h2 className="text-5xl lg:text-7xl font-black text-heading leading-[1.1] tracking-tight">
-              Our Specialized <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 font-black">Vehicle Types.</span>
-            </h2>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-paragraph text-lg md:text-xl font-medium max-w-4xl leading-relaxed"
-          >
-            From single pickups to massive multi-axle trailers, we maintain a diverse and high-performance fleet to meet every business requirement.
-          </motion.p>
-        </div>
+        {/* Grid Section */}
+
 
         <motion.div
           variants={containerVariants}

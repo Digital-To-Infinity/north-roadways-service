@@ -2,6 +2,7 @@ import Hero from '../components/home/Hero';
 import AboutUs from '../components/home/AboutUs';
 import Partners from '../components/home/Partners';
 import WhyChooseUs from '../components/home/WhyChooseUs';
+import FleetIntro from '../components/home/FleetIntro';
 import VehicleTypes from '../components/home/VehicleTypes';
 import CTA from '../components/common/CTA';
 
@@ -12,6 +13,7 @@ const Home = () => {
       <Partners />
       <AboutUs />
       <WhyChooseUs />
+      <FleetIntro />
       <VehicleTypes />
       <CTA />
     </div>

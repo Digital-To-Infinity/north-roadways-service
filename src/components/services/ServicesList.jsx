@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge, ChevronRight, MapPin, Clock, CheckCircle2, ArrowRight, Settings, X, Send } from 'lucide-react';
-import pickupImg from '../../assets/images/pickup.jpeg';
-import lcvImg from '../../assets/images/lcv.jpeg';
+import pickupImg from '../../assets/images/pickup.png';
+import lcvImg from '../../assets/images/lcv.png';
 import ftlImg from '../../assets/images/ftl.jpeg';
 import odcImg from '../../assets/images/odc.jpeg';
 import container20ftImg from '../../assets/images/container_20ft.jpeg';
 import container32ftxlImg from '../../assets/images/container_32ft_xl.jpeg';
 import containerMultiXLImg from '../../assets/images/container_multi_xl.jpeg';
-import trailerImg from '../../assets/images/trailer.jpeg';
+import trailerImg from '../../assets/images/trailer.png';
 import allGoodsImg from '../../assets/images/all_goods.jpeg';
 
 const servicesDetailed = [
@@ -57,7 +57,7 @@ const servicesDetailed = [
   { 
     id: "odc",
     name: "ODC", 
-    desc: "Over-Dimensional Consignment ( ODC Cargo ) handling requires precision. We manage the transport of oversized machinery and equipment with specialized infrastructure and expert supervision.", 
+    desc: "Over-Dimension Consignment ( ODC Cargo ) handling requires precision. We manage the transport of oversized machinery and equipment with specialized infrastructure and expert supervision.", 
     icon: Maximize,
     tag: "Heavy Engineering",
     image: odcImg,

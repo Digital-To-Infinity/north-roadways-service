@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import truckImg from '../../assets/images/about-img.jpeg';
+import truckImg from '../../assets/images/about-img.png';
 
 const AboutHero = () => {
     const containerVariants = {

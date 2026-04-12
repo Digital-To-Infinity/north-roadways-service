@@ -10,7 +10,7 @@ const specialties = [
     },
     {
         title: "ODC Cargo Handling",
-        description: "Expertise in managing Over Dimensional Consignment with specialized trailers and route surveys for complex industrial machinery.",
+        description: "Expertise in managing Over Dimension Consignment with specialized trailers and route surveys for complex industrial machinery.",
         icon: Package,
         keywords: ["Surveys", "Permission", "Heavy"]
     },

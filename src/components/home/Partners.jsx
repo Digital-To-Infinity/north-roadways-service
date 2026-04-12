@@ -20,6 +20,7 @@ import logo17 from '../../assets/logo/Tuyan Industries.png';
 import logo18 from '../../assets/logo/Unicorn Petroleum Industries Pvt Ltd.png';
 
 const partnersData = [
+  { name: 'CTRLM Print Management India Pvt Ltd', logo: logo6, color: '#f43f5e' },
   { name: 'Sudarshan Pharma Industries Ltd', logo: logo14, color: '#84cc16' },
   { name: 'Unicorn Petroleum Industries Pvt Ltd', logo: logo18, color: '#2dd4bf' },
   { name: 'Arion Scaffolding Pvt Ltd', logo: logo1, color: '#f97316' },
@@ -27,7 +28,6 @@ const partnersData = [
   { name: 'BSC Interiors Pvt Ltd', logo: logo3, color: '#16a34a' },
   { name: 'Big Imports & Gifts', logo: logo4, color: '#ec4899' },
   { name: 'Blackstone Engineering', logo: logo5, color: '#6366f1' },
-  { name: 'CTRLM Print Management India Pvt Ltd', logo: logo6, color: '#f43f5e' },
   { name: 'Express Global Logistics Pvt Ltd', logo: logo7, color: '#f59e0b' },
   { name: 'Laxmi Engineering Works', logo: logo8, color: '#10b981' },
   { name: 'NCC Limited', logo: logo9, color: '#3b82f6' },
@@ -172,11 +172,11 @@ const Partners = () => {
               <div className="relative mb-6">
                 <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-ping"></div>
                 <div className="h-16 w-16 md:h-20 md:w-20 rounded-full bg-gradient-to-tr from-primary to-orange-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-8 w-8 md:h-10 md:w-10 text-white" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 md:h-10 md:w-10 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

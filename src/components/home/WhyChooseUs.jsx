@@ -16,7 +16,7 @@ const reasons = [
   },
   { 
     title: "All Metro City Office", 
-    desc: "A powerful presence in every major metro hub, offering local expertise and seamless logistics coordination nationwide.", 
+    desc: "We have offices in all major metro cities across India, enabling strong local expertise and seamless nationwide logistics coordination.", 
     icon: Building2,
     highlight: "24/7 Support"
   }
