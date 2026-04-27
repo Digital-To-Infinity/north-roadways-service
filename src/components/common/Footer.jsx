@@ -34,20 +34,13 @@ const Footer = () => {
         { name: 'Pickup', link: '/services#pickup' },
         { name: 'LCV', link: '/services#lcv' },
         { name: 'Full Truck Load', link: '/services#ftl' },
-        { name: 'ODC', link: '/services#odc' },
         { name: 'Container 20ft', link: '/services#container-20ft' },
         { name: 'Container 32ft Single XL', link: '/services#container-32ft-xl' },
         { name: 'Container Multi XL', link: '/services#container-multi-xl' },
-        { name: 'Trailer', link: '/services#trailer' }
+        { name: 'Trailer', link: '/services#trailer' },
+        { name: 'ODC', link: '/services#odc' },
       ]
     }
-  ]
-
-  const socialLinks = [
-    { icon: <FacebookIcon size={20} />, href: '#' },
-    { icon: <TwitterIcon size={20} />, href: '#' },
-    { icon: <InstagramIcon size={20} />, href: '#' },
-    { icon: <LinkedinIcon size={20} />, href: '#' }
   ]
 
   return (
@@ -67,17 +60,6 @@ const Footer = () => {
             <p className="text-white/80 leading-relaxed max-w-xs font-medium">
               Reliable transportation and logistics solutions tailored to your business needs across the region since 2022.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((link, idx) => (
-                <a
-                  key={idx}
-                  href={link.href}
-                  className="bg-white/10 hover:bg-white text-white hover:text-primary p-3 rounded-full transition-all duration-300 hover:scale-110 active:scale-90"
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}

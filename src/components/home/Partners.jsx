@@ -18,6 +18,7 @@ import logo15 from '../../assets/logo/Sun International.png';
 import logo16 from '../../assets/logo/Sushil Enterprises Mehsana.png';
 import logo17 from '../../assets/logo/Tuyan Industries.png';
 import logo18 from '../../assets/logo/Unicorn Petroleum Industries Pvt Ltd.png';
+import logo19 from '../../assets/logo/ht-media.webp';
 
 const partnersData = [
   { name: 'CTRLM Print Management India Pvt Ltd', logo: logo6, color: '#f43f5e' },
@@ -38,6 +39,7 @@ const partnersData = [
   { name: 'Sun International', logo: logo15, color: '#eab308' },
   { name: 'Sushil Enterprises Pvt Ltd', logo: logo16, color: '#64748b' },
   { name: 'Tuyan Industries', logo: logo17, color: '#d946ef' },
+  { name: 'HT Media', logo: logo19, color: '#f43f5e' },
 ];
 
 const Partners = () => {

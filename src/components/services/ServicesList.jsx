@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, Package, Box, ShieldCheck, Zap, Maximize, Gauge, ChevronRight, MapPin, Clock, CheckCircle2, ArrowRight, Settings, X, Send } from 'lucide-react';
 import pickupImg from '../../assets/images/pickup.png';
 import lcvImg from '../../assets/images/lcv.png';
-import ftlImg from '../../assets/images/ftl.jpeg';
+import ftlImg from '../../assets/images/ftl.png';
 import odcImg from '../../assets/images/odc.jpeg';
-import container20ftImg from '../../assets/images/container_20ft.jpeg';
-import container32ftxlImg from '../../assets/images/container_32ft_xl.jpeg';
-import containerMultiXLImg from '../../assets/images/container_multi_xl.jpeg';
+import container20ftImg from '../../assets/images/container_20ft.png';
+import container32ftxlImg from '../../assets/images/container_32ft_xl.png';
+import containerMultiXLImg from '../../assets/images/container_multi_xl.png';
 import trailerImg from '../../assets/images/trailer.png';
-import allGoodsImg from '../../assets/images/all_goods.jpeg';
+import allGoodsImg from '../../assets/images/all_goods.png';
 
 const servicesDetailed = [
   { 
